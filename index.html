@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="IT-услуги под ключ: разработка сайтов, мобильных приложений, автоматизация бизнеса с применением AI. Быстро, надёжно, с гарантией результата.">
+  <meta name="keywords" content="разработка сайтов, мобильные приложения, IT консалтинг, автоматизация бизнеса, создание сайта на заказ, веб разработка">
+  <meta property="og:title" content="IT Айболит — Лечим бизнес с помощью технологий">
+  <meta property="og:description" content="Разработка сайтов, мобильных приложений и автоматизация бизнеса. Результат за 7–14 дней.">
+  <meta property="og:type" content="website">
+  <title>IT Айболит | Разработка сайтов и мобильных приложений</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563EB;
+      --primary-dark: #1D4ED8;
+      --secondary: #10B981;
+      --accent: #F59E0B;
+      --dark: #0F172A;
+      --gray: #64748B;
+      --light: #F1F5F9;
+      --white: #FFFFFF;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(37,99,235,0.10);
+      --shadow-lg: 0 12px 40px rgba(15,23,42,0.15);
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ─── HEADER ─── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(37,99,235,0.08);
+      z-index: 1000;
+      padding: 0 24px;
+    }
+
+    .header-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+
+    .logo {
+      font-size: 20px; font-weight: 800; color: var(--primary);
+      text-decoration: none; display: flex; align-items: center; gap: 8px;
+    }
+
+    .logo-icon {
+      width: 36px; height: 36px; background: var(--primary);
+      border-radius: 8px; display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+    }
+
+    nav { display: flex; gap: 32px; align-items: center; }
+    nav a { text-decoration: none; color: var(--gray); font-size: 14px; font-weight: 500; transition: color 0.2s; }
+    nav a:hover { color: var(--primary); }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 24px; border-radius: 8px;
+      font-size: 14px; font-weight: 600; text-decoration: none;
+      cursor: pointer; border: none; transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--primary); color: white;
+      box-shadow: 0 2px 12px rgba(37,99,235,0.35);
+    }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(37,99,235,0.45); }
+
+    .btn-outline {
+      background: transparent; color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover { background: var(--primary); color: white; }
+
+    .btn-lg { padding: 16px 36px; font-size: 16px; border-radius: 10px; }
+
+    .mobile-menu-btn { display: none; background: none; border: none; cursor: pointer; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #1D4ED8 100%);
+      display: flex; align-items: center;
+      padding: 100px 24px 80px;
+      position: relative; overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+      position: relative;
+    }
+
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3);
+      color: #34D399; padding: 6px 16px; border-radius: 100px;
+      font-size: 13px; font-weight: 600; margin-bottom: 24px;
+    }
+
+    .hero-badge::before { content: '●'; font-size: 8px; animation: blink 1.5s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 800; color: white; line-height: 1.1;
+      margin-bottom: 24px;
+    }
+
+    h1 span { color: #60A5FA; }
+
+    .hero-desc {
+      font-size: 18px; color: rgba(255,255,255,0.75);
+      margin-bottom: 40px; max-width: 480px;
+    }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 48px; }
+
+    .hero-stats {
+      display: flex; gap: 40px;
+    }
+
+    .stat { }
+    .stat-num { font-size: 32px; font-weight: 800; color: white; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,0.55); margin-top: 2px; }
+
+    .hero-visual {
+      position: relative;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px; padding: 28px;
+    }
+
+    .hero-card-header {
+      display: flex; align-items: center; gap: 12px; margin-bottom: 24px;
+    }
+
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-red { background: #EF4444; }
+    .dot-yellow { background: #F59E0B; }
+    .dot-green { background: #10B981; }
+
+    .code-block {
+      background: rgba(0,0,0,0.3); border-radius: 10px;
+      padding: 16px; font-family: 'Courier New', monospace;
+      font-size: 13px; color: #A5F3FC; line-height: 1.8;
+    }
+
+    .code-green { color: #86EFAC; }
+    .code-blue { color: #93C5FD; }
+    .code-yellow { color: #FDE68A; }
+
+    .floating-badges {
+      position: absolute; right: -20px; top: -20px;
+    }
+
+    .floating-badge {
+      background: white; border-radius: 10px; padding: 10px 14px;
+      font-size: 12px; font-weight: 700; box-shadow: var(--shadow-lg);
+      display: flex; align-items: center; gap: 8px; margin-bottom: 12px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .floating-badge:nth-child(2) { animation-delay: 1s; margin-left: 20px; }
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+
+    /* ─── SECTIONS ─── */
+    section { padding: 100px 24px; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 12px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 2px; color: var(--primary); margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 800; line-height: 1.15; margin-bottom: 20px;
+    }
+
+    .section-desc { font-size: 18px; color: var(--gray); max-width: 560px; }
+
+    .section-header { margin-bottom: 64px; }
+    .section-header.center { text-align: center; }
+    .section-header.center .section-desc { margin: 0 auto; }
+
+    /* ─── SERVICES ─── */
+    .services-bg { background: var(--light); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white; border-radius: var(--radius);
+      padding: 32px; border: 1px solid rgba(0,0,0,0.06);
+      transition: all 0.3s; position: relative; overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: var(--primary); transform: scaleX(0); transition: transform 0.3s;
+    }
+
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-icon {
+      width: 56px; height: 56px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; margin-bottom: 20px;
+    }
+
+    .service-card h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    .service-card p { color: var(--gray); font-size: 15px; margin-bottom: 20px; }
+
+    .service-price {
+      font-size: 24px; font-weight: 800; color: var(--primary);
+    }
+
+    .service-price span { font-size: 13px; font-weight: 400; color: var(--gray); }
+
+    .service-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+    .tag {
+      font-size: 11px; font-weight: 600; padding: 4px 10px;
+      border-radius: 100px; background: var(--light); color: var(--gray);
+    }
+
+    /* ─── WHY US ─── */
+    .why-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center;
+    }
+
+    .why-list { display: flex; flex-direction: column; gap: 24px; }
+
+    .why-item {
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+
+    .why-num {
+      width: 44px; height: 44px; min-width: 44px;
+      background: var(--primary); color: white;
+      border-radius: 10px; display: flex; align-items: center;
+      justify-content: center; font-weight: 800; font-size: 16px;
+    }
+
+    .why-item h3 { font-size: 17px; font-weight: 700; margin-bottom: 6px; }
+    .why-item p { color: var(--gray); font-size: 15px; }
+
+    .why-visual {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+      border-radius: 20px; padding: 40px; color: white;
+    }
+
+    .metric { margin-bottom: 28px; }
+    .metric:last-child { margin-bottom: 0; }
+    .metric-label { font-size: 13px; opacity: 0.7; margin-bottom: 8px; }
+    .metric-bar { background: rgba(255,255,255,0.15); border-radius: 100px; height: 8px; margin-bottom: 4px; }
+    .metric-fill { height: 8px; border-radius: 100px; background: #60A5FA; }
+    .metric-val { font-size: 13px; font-weight: 700; text-align: right; }
+
+    /* ─── PROCESS ─── */
+    .process-bg { background: var(--light); }
+
+    .process-steps {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute; top: 28px; left: 60px; right: 60px; height: 2px;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      z-index: 0;
+    }
+
+    .step {
+      text-align: center; padding: 0 16px; position: relative; z-index: 1;
+    }
+
+    .step-num {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: white; border: 3px solid var(--primary);
+      color: var(--primary); font-weight: 800; font-size: 20px;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px; box-shadow: 0 0 0 6px var(--light);
+    }
+
+    .step h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+    .step p { font-size: 14px; color: var(--gray); }
+    .step-time { font-size: 12px; color: var(--primary); font-weight: 700; margin-top: 8px; }
+
+    /* ─── PORTFOLIO ─── */
+    .portfolio-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+
+    .portfolio-card {
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid rgba(0,0,0,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .portfolio-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+
+    .portfolio-thumb {
+      height: 180px; display: flex; align-items: center; justify-content: center;
+      font-size: 56px;
+    }
+
+    .portfolio-info { padding: 20px; }
+    .portfolio-info h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+    .portfolio-info p { font-size: 14px; color: var(--gray); }
+    .portfolio-tag {
+      display: inline-block; margin-top: 12px;
+      font-size: 11px; font-weight: 700; padding: 4px 10px;
+      background: var(--light); border-radius: 100px; color: var(--primary);
+    }
+
+    /* ─── PRICING ─── */
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+
+    .pricing-card {
+      border-radius: 16px; padding: 36px;
+      border: 2px solid rgba(0,0,0,0.08);
+      transition: all 0.3s; background: white;
+    }
+
+    .pricing-card.popular {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(37,99,235,0.08);
+      position: relative;
+    }
+
+    .popular-badge {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      background: var(--primary); color: white;
+      font-size: 11px; font-weight: 800; padding: 4px 16px; border-radius: 100px;
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+
+    .pricing-name { font-size: 14px; font-weight: 700; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .pricing-price { font-size: 40px; font-weight: 800; color: var(--dark); }
+    .pricing-price sup { font-size: 20px; font-weight: 600; vertical-align: super; }
+    .pricing-price span { font-size: 16px; font-weight: 400; color: var(--gray); }
+    .pricing-desc { font-size: 14px; color: var(--gray); margin: 12px 0 24px; }
+    .pricing-divider { height: 1px; background: var(--light); margin: 24px 0; }
+
+    .pricing-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 32px; }
+    .pricing-features li { display: flex; gap: 10px; font-size: 14px; }
+    .pricing-features li::before { content: '✓'; color: var(--secondary); font-weight: 800; flex-shrink: 0; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-bg { background: var(--light); }
+
+    .testimonials-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+    }
+
+    .testimonial-card {
+      background: white; border-radius: var(--radius); padding: 28px;
+      border: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .stars { color: #F59E0B; font-size: 18px; margin-bottom: 16px; }
+    .testimonial-text { font-size: 15px; color: var(--dark); line-height: 1.7; margin-bottom: 20px; }
+
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .author-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--primary); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 700;
+    }
+    .author-name { font-size: 14px; font-weight: 700; }
+    .author-role { font-size: 12px; color: var(--gray); }
+
+    /* ─── FAQ ─── */
+    .faq-list { max-width: 720px; margin: 0 auto; }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.08); padding: 24px 0;
+    }
+
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer; font-size: 16px; font-weight: 600;
+    }
+
+    .faq-icon { font-size: 20px; color: var(--primary); transition: transform 0.3s; }
+    .faq-answer { font-size: 15px; color: var(--gray); max-height: 0; overflow: hidden; transition: all 0.3s; }
+    .faq-item.open .faq-answer { max-height: 200px; padding-top: 12px; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* ─── CTA SECTION ─── */
+    .cta-section {
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 100%);
+      text-align: center;
+    }
+
+    .cta-section h2 { color: white; margin-bottom: 16px; }
+    .cta-section p { color: rgba(255,255,255,0.7); font-size: 18px; margin-bottom: 40px; }
+
+    /* ─── CONTACT ─── */
+    .contact-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start;
+    }
+
+    .contact-info h2 { margin-bottom: 16px; }
+    .contact-info p { color: var(--gray); font-size: 16px; margin-bottom: 40px; }
+
+    .contact-items { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+    .contact-item-icon {
+      width: 44px; height: 44px; min-width: 44px;
+      background: var(--light); border-radius: 10px;
+      display: flex; align-items: center; justify-content: center; font-size: 20px;
+    }
+    .contact-item h4 { font-size: 13px; color: var(--gray); margin-bottom: 2px; }
+    .contact-item a { font-size: 15px; font-weight: 600; color: var(--dark); text-decoration: none; }
+    .contact-item a:hover { color: var(--primary); }
+
+    /* ─── FORM ─── */
+    .form-card {
+      background: white; border-radius: 20px; padding: 40px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .form-card h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .form-card p { color: var(--gray); font-size: 14px; margin-bottom: 28px; }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; font-weight: 600; color: var(--dark); margin-bottom: 6px; }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 12px 16px; border-radius: 8px;
+      border: 1.5px solid rgba(0,0,0,0.1); font-size: 14px;
+      font-family: 'Inter', sans-serif; transition: border-color 0.2s;
+      background: white; color: var(--dark);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none; border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+
+    .form-group textarea { resize: vertical; min-height: 100px; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+
+    .form-submit {
+      width: 100%; padding: 14px; border-radius: 10px;
+      background: var(--primary); color: white; border: none;
+      font-size: 16px; font-weight: 700; cursor: pointer;
+      transition: all 0.2s; margin-top: 8px;
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+    }
+
+    .form-submit:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 20px rgba(37,99,235,0.4); }
+
+    .form-note { font-size: 12px; color: var(--gray); text-align: center; margin-top: 12px; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark); color: rgba(255,255,255,0.6);
+      padding: 60px 24px 32px;
+    }
+
+    .footer-inner { max-width: 1200px; margin: 0 auto; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 48px; }
+
+    .footer-brand p { font-size: 14px; margin: 16px 0 24px; line-height: 1.7; }
+    .footer-social { display: flex; gap: 12px; }
+    .social-btn {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: white; text-decoration: none; font-size: 16px; transition: background 0.2s;
+    }
+    .social-btn:hover { background: var(--primary); }
+
+    .footer-col h4 { font-size: 13px; font-weight: 700; color: white; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-col ul a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer-col ul a:hover { color: white; }
+
+    .footer-divider { height: 1px; background: rgba(255,255,255,0.08); margin-bottom: 28px; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+    .footer-bottom a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+    /* ─── MODAL ─── */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6); z-index: 9999;
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+
+    .modal {
+      background: white; border-radius: 20px; padding: 48px;
+      max-width: 480px; width: 100%; text-align: center;
+    }
+    .modal-icon { font-size: 64px; margin-bottom: 16px; }
+    .modal h3 { font-size: 24px; font-weight: 800; margin-bottom: 12px; }
+    .modal p { color: var(--gray); margin-bottom: 28px; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 1024px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+      .hero-visual { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+      .process-steps::before { display: none; }
+    }
+
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .mobile-menu-btn { display: block; }
+      section { padding: 60px 16px; }
+      .hero { padding: 80px 16px 60px; }
+      .hero-stats { gap: 24px; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+    }
+
+    /* ─── CHAT WIDGET ─── */
+    .chat-widget {
+      position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    }
+
+    .chat-btn {
+      width: 60px; height: 60px; border-radius: 50%;
+      background: var(--primary); color: white;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 28px; cursor: pointer; border: none;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.45);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 4px 20px rgba(37,99,235,0.45); }
+      50% { box-shadow: 0 4px 40px rgba(37,99,235,0.7); }
+      100% { box-shadow: 0 4px 20px rgba(37,99,235,0.45); }
+    }
+
+    .chat-tooltip {
+      position: absolute; bottom: 72px; right: 0;
+      background: white; border-radius: 12px; padding: 12px 16px;
+      box-shadow: var(--shadow-lg); font-size: 13px; font-weight: 600;
+      white-space: nowrap; color: var(--dark);
+    }
+
+    .chat-tooltip::after {
+      content: ''; position: absolute; bottom: -8px; right: 20px;
+      width: 0; height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-top: 8px solid white;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🩺</div>
+      IT Айболит
+    </a>
+    <nav>
+      <a href="#services">Услуги</a>
+      <a href="#process">Как работаем</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#pricing">Цены</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary">Получить консультацию</a>
+    <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">🚀 Берём проекты в работу за 24 часа</div>
+      <h1>
+        Лечим бизнес<br>
+        с помощью <span>технологий</span>
+      </h1>
+      <p class="hero-desc">
+        Разработка сайтов, мобильных приложений и автоматизация бизнеса на базе AI.
+        Результат за 7–14 дней — или вернём деньги.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary btn-lg">Обсудить проект</a>
+        <a href="#portfolio" class="btn btn-outline btn-lg" style="color:white;border-color:rgba(255,255,255,0.4);">Смотреть работы</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <div class="stat-num">120+</div>
+          <div class="stat-label">проектов сдано</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5 лет</div>
+          <div class="stat-label">на рынке</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">98%</div>
+          <div class="stat-label">довольных клиентов</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="floating-badges">
+        <div class="floating-badge">✅ Проект сдан в срок</div>
+        <div class="floating-badge">⭐ 5.0 / Kwork</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-header">
+          <div class="dot dot-red"></div>
+          <div class="dot dot-yellow"></div>
+          <div class="dot dot-green"></div>
+          <span style="color:rgba(255,255,255,0.5);font-size:13px;margin-left:8px;">итайболит.ру</span>
+        </div>
+        <div class="code-block">
+          <span class="code-green">// Ваш бизнес после IT Айболит</span><br>
+          const result = {<br>
+          &nbsp;&nbsp;<span class="code-blue">revenue</span>: <span class="code-yellow">"+340%"</span>,<br>
+          &nbsp;&nbsp;<span class="code-blue">customers</span>: <span class="code-yellow">"+200"</span>,<br>
+          &nbsp;&nbsp;<span class="code-blue">timeToMarket</span>: <span class="code-yellow">"14 дней"</span>,<br>
+          &nbsp;&nbsp;<span class="code-blue">support</span>: <span class="code-yellow">"24/7"</span>,<br>
+          &nbsp;&nbsp;<span class="code-blue">guarantee</span>: <span class="code-green">true</span><br>
+          }<br><br>
+          <span class="code-green">// Технологии: React, Node, Flutter,</span><br>
+          <span class="code-green">// AI/ML, WordPress, Python</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-bg" id="services">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Что мы делаем</div>
+      <h2>Полный спектр IT-услуг<br>для вашего бизнеса</h2>
+      <p class="section-desc">От простого лендинга до сложной AI-системы — берёмся за любые задачи и доводим до результата.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon" style="background:#EFF6FF;">🌐</div>
+        <h3>Разработка сайтов</h3>
+        <p>Лендинги, корпоративные сайты, интернет-магазины. Адаптивный дизайн, SEO-оптимизация с нуля.</p>
+        <div class="service-price">от 15 000 ₽ <span>/ проект</span></div>
+        <div class="service-tags">
+          <span class="tag">React</span>
+          <span class="tag">WordPress</span>
+          <span class="tag">SEO</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#F0FDF4;">📱</div>
+        <h3>Мобильные приложения</h3>
+        <p>iOS и Android приложения на Flutter или нативно. MVP за 14 дней, публикация в App Store и Google Play.</p>
+        <div class="service-price">от 80 000 ₽ <span>/ проект</span></div>
+        <div class="service-tags">
+          <span class="tag">Flutter</span>
+          <span class="tag">iOS</span>
+          <span class="tag">Android</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FFF7ED;">🤖</div>
+        <h3>AI-автоматизация</h3>
+        <p>Чат-боты, автоматические воронки, интеграция GPT в бизнес-процессы. Экономим до 40 часов в месяц.</p>
+        <div class="service-price">от 25 000 ₽ <span>/ проект</span></div>
+        <div class="service-tags">
+          <span class="tag">ChatGPT API</span>
+          <span class="tag">Python</span>
+          <span class="tag">n8n</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FDF4FF;">💡</div>
+        <h3>IT-консалтинг</h3>
+        <p>Аудит текущей IT-инфраструктуры, подбор стека технологий, roadmap цифровизации бизнеса.</p>
+        <div class="service-price">от 5 000 ₽ <span>/ час</span></div>
+        <div class="service-tags">
+          <span class="tag">Аудит</span>
+          <span class="tag">Стратегия</span>
+          <span class="tag">MVP</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#ECFDF5;">🔧</div>
+        <h3>Техподдержка и доработки</h3>
+        <p>Ежемесячная поддержка сайта или приложения, доработки, обновления, мониторинг 24/7.</p>
+        <div class="service-price">от 5 000 ₽ <span>/ месяц</span></div>
+        <div class="service-tags">
+          <span class="tag">Support</span>
+          <span class="tag">DevOps</span>
+          <span class="tag">24/7</span>
+        </div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon" style="background:#FFF1F2;">📈</div>
+        <h3>SEO и продвижение</h3>
+        <p>Вывод сайта в топ Яндекс и Google. Семантическое ядро, оптимизация, контент-стратегия.</p>
+        <div class="service-price">от 15 000 ₽ <span>/ месяц</span></div>
+        <div class="service-tags">
+          <span class="tag">SEO</span>
+          <span class="tag">Яндекс</span>
+          <span class="tag">Google</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="section-inner">
+    <div class="why-grid">
+      <div>
+        <div class="section-label">Почему мы</div>
+        <h2>Врачи IT — лечим проблемы, а не симптомы</h2>
+        <p style="color:var(--gray);margin-bottom:40px;">Не просто выполняем задачу, а разбираемся в бизнесе клиента и предлагаем решения, которые реально работают.</p>
+        <div class="why-list">
+          <div class="why-item">
+            <div class="why-num">1</div>
+            <div>
+              <h3>Гарантия результата или возврат</h3>
+              <p>Если сдадим позже срока или качество не устроит — вернём деньги. Без вопросов.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">2</div>
+            <div>
+              <h3>Фиксированная цена</h3>
+              <p>Цена не меняется в процессе. Вы знаете, сколько заплатите с первого дня.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">3</div>
+            <div>
+              <h3>Личный менеджер 24/7</h3>
+              <p>Всегда на связи в Telegram. Отвечаем в течение 15 минут в рабочее время.</p>
+            </div>
+          </div>
+          <div class="why-item">
+            <div class="why-num">4</div>
+            <div>
+              <h3>Работаем по договору</h3>
+              <p>Официальный договор, NDA, сдача по актам. Полная прозрачность.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="why-visual">
+        <h3 style="font-size:18px;font-weight:700;margin-bottom:28px;">Наши показатели</h3>
+        <div class="metric">
+          <div class="metric-label">Клиенты вернулись на 2-й проект</div>
+          <div class="metric-bar"><div class="metric-fill" style="width:85%"></div></div>
+          <div class="metric-val">85%</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Проекты сданы в срок</div>
+          <div class="metric-bar"><div class="metric-fill" style="width:96%"></div></div>
+          <div class="metric-val">96%</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Оценка на фриланс-биржах</div>
+          <div class="metric-bar"><div class="metric-fill" style="width:100%;background:#F59E0B"></div></div>
+          <div class="metric-val">5.0 ⭐</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">NPS (рекомендуют нас)</div>
+          <div class="metric-bar"><div class="metric-fill" style="width:92%;background:#34D399"></div></div>
+          <div class="metric-val">92%</div>
+        </div>
+        <div style="margin-top:32px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.15);">
+          <div style="display:flex;gap:24px;">
+            <div>
+              <div style="font-size:28px;font-weight:800;">120+</div>
+              <div style="font-size:13px;opacity:0.6;margin-top:4px;">проектов</div>
+            </div>
+            <div>
+              <div style="font-size:28px;font-weight:800;">5 лет</div>
+              <div style="font-size:13px;opacity:0.6;margin-top:4px;">опыта</div>
+            </div>
+            <div>
+              <div style="font-size:28px;font-weight:800;">15+</div>
+              <div style="font-size:13px;opacity:0.6;margin-top:4px;">технологий</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-bg" id="process">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Как мы работаем</div>
+      <h2>От идеи до готового продукта<br>за 4 шага</h2>
+    </div>
+    <div class="process-steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Бриф и анализ</h3>
+        <p>Бесплатная консультация, обсуждение задачи, анализ рынка и конкурентов</p>
+        <div class="step-time">День 1</div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Техническое задание</h3>
+        <p>Детальное ТЗ, прототип интерфейса, утверждение бюджета и сроков</p>
+        <div class="step-time">2–3 дня</div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Разработка</h3>
+        <p>Еженедельные отчёты, доступ в Trello, промежуточные демо</p>
+        <div class="step-time">7–30 дней</div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Сдача и поддержка</h3>
+        <p>Тестирование, запуск, обучение, гарантийная поддержка 3 месяца</p>
+        <div class="step-time">День X</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-label">Портфолио</div>
+      <h2>Наши последние работы</h2>
+      <p class="section-desc">Реальные проекты с реальными результатами для клиентов из разных отраслей.</p>
+    </div>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#EFF6FF,#DBEAFE);">🛒</div>
+        <div class="portfolio-info">
+          <h3>Интернет-магазин строительных материалов</h3>
+          <p>Каталог 5000+ товаров, корзина, CRM-интеграция. Рост продаж +210% за 3 месяца.</p>
+          <span class="portfolio-tag">E-Commerce</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#F0FDF4,#DCFCE7);">📱</div>
+        <div class="portfolio-info">
+          <h3>Приложение доставки еды</h3>
+          <p>iOS + Android, геолокация, push-уведомления, онлайн-оплата. 10 000+ установок.</p>
+          <span class="portfolio-tag">Mobile App</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#FFF7ED,#FED7AA);">🤖</div>
+        <div class="portfolio-info">
+          <h3>AI-чат-бот для юридической компании</h3>
+          <p>Отвечает на 80% входящих вопросов, экономит 120 часов/мес. ROI x12.</p>
+          <span class="portfolio-tag">AI / Automation</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#FDF4FF,#F3E8FF);">🏥</div>
+        <div class="portfolio-info">
+          <h3>CRM-система для медицинской клиники</h3>
+          <p>Запись пациентов, история болезней, интеграция с 1С. 40 врачей, 5 филиалов.</p>
+          <span class="portfolio-tag">CRM / Web App</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#FFF1F2,#FFE4E6);">🏗</div>
+        <div class="portfolio-info">
+          <h3>Корпоративный сайт строительной компании</h3>
+          <p>Портфолио объектов, калькулятор стоимости, форма заявки. 5 место в Яндекс.</p>
+          <span class="portfolio-tag">Corporate Site</span>
+        </div>
+      </div>
+      <div class="portfolio-card">
+        <div class="portfolio-thumb" style="background:linear-gradient(135deg,#ECFDF5,#D1FAE5);">📊</div>
+        <div class="portfolio-info">
+          <h3>Дашборд аналитики для e-commerce</h3>
+          <p>Визуализация продаж, ABC-анализ, прогнозирование спроса на основе ML.</p>
+          <span class="portfolio-tag">Analytics / AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" style="background:var(--light);">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Тарифы</div>
+      <h2>Прозрачные цены,<br>никаких скрытых платежей</h2>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Старт</div>
+        <div class="pricing-price"><sup>от</sup> 15 000 <span>₽</span></div>
+        <div class="pricing-desc">Идеально для малого бизнеса и стартапов</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Лендинг или сайт-визитка</li>
+          <li>Адаптивный дизайн (mobile-first)</li>
+          <li>Базовая SEO-оптимизация</li>
+          <li>Форма заявки + интеграция почты</li>
+          <li>Срок: 7 дней</li>
+          <li>Поддержка 1 месяц</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Заказать</a>
+      </div>
+      <div class="pricing-card popular">
+        <div class="popular-badge">🔥 Популярный</div>
+        <div class="pricing-name">Бизнес</div>
+        <div class="pricing-price"><sup>от</sup> 45 000 <span>₽</span></div>
+        <div class="pricing-desc">Для растущего бизнеса с серьёзными задачами</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Многостраничный сайт или веб-приложение</li>
+          <li>Индивидуальный дизайн с нуля</li>
+          <li>CMS, личный кабинет, интеграции</li>
+          <li>SEO + аналитика (Яндекс.Метрика)</li>
+          <li>Срок: 14–21 день</li>
+          <li>Поддержка 3 месяца</li>
+          <li>Бесплатные правки в течение 30 дней</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary" style="width:100%;justify-content:center;">Заказать</a>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Enterprise</div>
+        <div class="pricing-price">По запросу</div>
+        <div class="pricing-desc">Сложные проекты, AI, мобильные приложения</div>
+        <div class="pricing-divider"></div>
+        <ul class="pricing-features">
+          <li>Мобильное приложение iOS + Android</li>
+          <li>AI / ML интеграция</li>
+          <li>CRM, ERP, кастомные системы</li>
+          <li>Архитектура и DevOps</li>
+          <li>Выделенная команда</li>
+          <li>Поддержка 12 месяцев</li>
+          <li>SLA с гарантией uptime 99.9%</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline" style="width:100%;justify-content:center;">Обсудить</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials-bg" id="reviews">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">Отзывы клиентов</div>
+      <h2>Что говорят те, кто с нами работал</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">«Заказал лендинг для своей компании. Сделали за 5 дней, очень профессионально. Заявки пошли уже в первую неделю. Рекомендую!»</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">А</div>
+          <div>
+            <div class="author-name">Алексей Морозов</div>
+            <div class="author-role">Директор, СтройГруп</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">«Разработали приложение для нашей клиники. Всё чётко по ТЗ, без задержек. Отдельное спасибо за идеи, которые мы даже не просили — они реально улучшили продукт.»</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">Е</div>
+          <div>
+            <div class="author-name">Елена Казакова</div>
+            <div class="author-role">Главврач, МедЦентр Плюс</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">«Сделали AI-бота для обработки заявок. Теперь 70% запросов обрабатывается автоматически. Окупился за 2 месяца. Очень доволен сотрудничеством.»</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">И</div>
+          <div>
+            <div class="author-name">Игорь Белов</div>
+            <div class="author-role">Основатель, LexAI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-header center">
+      <div class="section-label">FAQ</div>
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Как долго делается сайт?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Лендинг — 5–7 дней. Корпоративный сайт — 10–14 дней. Интернет-магазин — 14–30 дней. Мобильное приложение — 30–60 дней. Точные сроки фиксируются в договоре.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Работаете ли вы по договору?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Да, всегда. Заключаем договор, подписываем NDA при необходимости. Оплата поэтапно: 50% предоплата, 50% после сдачи. Все работы принимаются по актам.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Что будет, если результат мне не понравится?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Перед стартом мы детально согласовываем ТЗ и дизайн, поэтому сюрпризов почти не бывает. Если что-то не так — дорабатываем бесплатно. Если кардинально не устраивает — возвращаем деньги.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Поддерживаете ли сайт после сдачи?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Да. Гарантийная поддержка от 1 до 12 месяцев в зависимости от тарифа. Есть абонентское обслуживание: обновления, мониторинг, доработки от 5 000 ₽/месяц.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          Работаете ли вы с зарубежными клиентами?
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-answer">Да, работаем с клиентами из любых стран. Принимаем оплату в USD, EUR, USDT. Умеем работать в разных часовых поясах. Общаемся на русском и английском.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="section-inner" style="text-align:center;">
+    <h2>Готовы запустить ваш проект?</h2>
+    <p>Бесплатная консультация — обсудим задачу, оценим стоимость и сроки за 30 минут.</p>
+    <a href="#contact" class="btn btn-primary btn-lg" style="font-size:18px;padding:18px 48px;">
+      Получить бесплатную консультацию →
+    </a>
+    <p style="margin-top:20px;font-size:13px;color:rgba(255,255,255,0.4);">Отвечаем в течение 1 часа в рабочее время</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="section-label">Контакты</div>
+        <h2>Давайте обсудим ваш проект</h2>
+        <p>Заполните форму или напишите нам любым удобным способом — ответим в течение часа.</p>
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <h4>Email</h4>
+              <a href="mailto:hello@itaibolit.ru">hello@itaibolit.ru</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <h4>Telegram</h4>
+              <a href="https://t.me/itaibolit" target="_blank">@itaibolit</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">🛒</div>
+            <div>
+              <h4>Kwork</h4>
+              <a href="https://kwork.ru/user/itaibolit" target="_blank">kwork.ru/user/itaibolit</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">⏰</div>
+            <div>
+              <h4>Режим работы</h4>
+              <a href="#">Пн–Вс, 9:00–22:00 МСК</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h3>Получить консультацию</h3>
+        <p>Бесплатно. Без спама. Без обязательств.</p>
+        <form id="contactForm" onsubmit="submitForm(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>Ваше имя *</label>
+              <input type="text" placeholder="Иван" required>
+            </div>
+            <div class="form-group">
+              <label>Телефон / Telegram *</label>
+              <input type="text" placeholder="+7 999 123-45-67" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Тип проекта</label>
+            <select>
+              <option value="">Выберите тип услуги</option>
+              <option>Разработка сайта</option>
+              <option>Мобильное приложение</option>
+              <option>AI-автоматизация</option>
+              <option>IT-консалтинг</option>
+              <option>SEO-продвижение</option>
+              <option>Другое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Бюджет</label>
+            <select>
+              <option value="">Примерный бюджет</option>
+              <option>до 30 000 ₽</option>
+              <option>30 000 – 100 000 ₽</option>
+              <option>100 000 – 300 000 ₽</option>
+              <option>от 300 000 ₽</option>
+              <option>Готов обсудить</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Расскажите о задаче</label>
+            <textarea placeholder="Кратко опишите, что нужно сделать..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            Отправить заявку →
+          </button>
+          <p class="form-note">Нажимая кнопку, вы соглашаетесь с <a href="#" style="color:var(--primary)">политикой конфиденциальности</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo" style="color:white;margin-bottom:0;">
+          <div class="logo-icon">🩺</div>
+          IT Айболит
+        </a>
+        <p>Разрабатываем сайты, мобильные приложения и автоматизируем бизнес с помощью AI. Лечим бизнес технологиями.</p>
+        <div class="footer-social">
+          <a href="https://t.me/itaibolit" class="social-btn" target="_blank">✈</a>
+          <a href="#" class="social-btn">VK</a>
+          <a href="#" class="social-btn">▶</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Услуги</h4>
+        <ul>
+          <li><a href="#services">Разработка сайтов</a></li>
+          <li><a href="#services">Мобильные приложения</a></li>
+          <li><a href="#services">AI-автоматизация</a></li>
+          <li><a href="#services">IT-консалтинг</a></li>
+          <li><a href="#services">SEO-продвижение</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Компания</h4>
+        <ul>
+          <li><a href="#why">О нас</a></li>
+          <li><a href="#portfolio">Портфолио</a></li>
+          <li><a href="#reviews">Отзывы</a></li>
+          <li><a href="#pricing">Цены</a></li>
+          <li><a href="#contact">Контакты</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Правовое</h4>
+        <ul>
+          <li><a href="#">Политика конфиденциальности</a></li>
+          <li><a href="#">Условия использования</a></li>
+          <li><a href="#">Договор-оферта</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <span>© 2025 IT Айболит. Все права защищены.</span>
+      <span>Сайт разработан нами для нас 🩺</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CHAT WIDGET -->
+<div class="chat-widget">
+  <div class="chat-tooltip">💬 Напишите нам в Telegram</div>
+  <a href="https://t.me/itaibolit" target="_blank">
+    <button class="chat-btn">✈</button>
+  </a>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="successModal">
+  <div class="modal">
+    <div class="modal-icon">🎉</div>
+    <h3>Заявка отправлена!</h3>
+    <p>Мы получили ваш запрос и свяжемся с вами в течение 1 часа в рабочее время.</p>
+    <button class="btn btn-primary" onclick="closeModal()">Отлично, жду!</button>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  function submitForm(e) {
+    e.preventDefault();
+    document.getElementById('successModal').classList.add('open');
+  }
+
+  function closeModal() {
+    document.getElementById('successModal').classList.remove('open');
+    document.getElementById('contactForm').reset();
+  }
+
+  // Header scroll effect
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('header');
+    if (window.scrollY > 20) {
+      header.style.boxShadow = '0 4px 24px rgba(0,0,0,0.1)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+  });
+
+  // Hide chat tooltip after 5s
+  setTimeout(() => {
+    const tooltip = document.querySelector('.chat-tooltip');
+    if (tooltip) tooltip.style.display = 'none';
+  }, 5000);
+
+  function toggleMenu() {
+    alert('Меню: Услуги | Процесс | Портфолио | Цены | Контакты');
+  }
+
+  // Smooth reveal on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .portfolio-card, .pricing-card, .testimonial-card, .why-item, .step').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
