@@ -1146,20 +1146,26 @@
       <div class="form-card">
         <h3>Получить консультацию</h3>
         <p>Бесплатно. Без спама. Без обязательств.</p>
-        <form id="contactForm" onsubmit="submitForm(event)">
+        <form id="contactForm" action="https://formsubmit.co/serg.alesenko@gmail.com" method="POST">
+          <!-- FormSubmit настройки -->
+          <input type="hidden" name="_subject" value="🩺 Новая заявка с сайта IT Айболит">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://sega-arch.github.io/cera-apx.github.io/?sent=1">
+
           <div class="form-row">
             <div class="form-group">
               <label>Ваше имя *</label>
-              <input type="text" placeholder="Иван" required>
+              <input type="text" name="Имя" placeholder="Иван" required>
             </div>
             <div class="form-group">
               <label>Телефон / Telegram *</label>
-              <input type="text" placeholder="+7 999 123-45-67" required>
+              <input type="text" name="Контакт" placeholder="+7 999 123-45-67" required>
             </div>
           </div>
           <div class="form-group">
             <label>Тип проекта</label>
-            <select>
+            <select name="Тип проекта">
               <option value="">Выберите тип услуги</option>
               <option>Разработка сайта</option>
               <option>Мобильное приложение</option>
@@ -1171,7 +1177,7 @@
           </div>
           <div class="form-group">
             <label>Бюджет</label>
-            <select>
+            <select name="Бюджет">
               <option value="">Примерный бюджет</option>
               <option>до 30 000 ₽</option>
               <option>30 000 – 100 000 ₽</option>
@@ -1182,7 +1188,7 @@
           </div>
           <div class="form-group">
             <label>Расскажите о задаче</label>
-            <textarea placeholder="Кратко опишите, что нужно сделать..."></textarea>
+            <textarea name="Описание задачи" placeholder="Кратко опишите, что нужно сделать..."></textarea>
           </div>
           <button type="submit" class="form-submit">
             Отправить заявку →
@@ -1271,14 +1277,14 @@
     item.classList.toggle('open');
   }
 
-  function submitForm(e) {
-    e.preventDefault();
-    document.getElementById('successModal').classList.add('open');
-  }
-
   function closeModal() {
     document.getElementById('successModal').classList.remove('open');
-    document.getElementById('contactForm').reset();
+  }
+
+  // Показываем успех если вернулись после отправки формы
+  if (window.location.search.includes('sent=1')) {
+    document.getElementById('successModal').classList.add('open');
+    history.replaceState({}, '', window.location.pathname);
   }
 
   // Header scroll effect
